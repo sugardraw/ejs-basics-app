@@ -1,0 +1,38 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body class="container">
+    <header><% include ../partials/header %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h1>What do you want to drink...?</h1>
+
+        <p>Welcome to templating using EJS</p>
+
+        <form action="/drink-order/" method="GET" class="w-50">
+          <label for="drink">Choose a drink</label>
+          <select type="number" name="drink" class="form-control">
+            <option value="Bloody Mary">Bloody Mary</option>
+            <option value="Martini">Martini</option>
+            <option value="Wine">Wine</option>
+            <option value="Beer">Beer</option>
+            <option value="Vodka">Vodka</option>
+            <option value="Eierlikor">Eierlikor</option>
+            <option value="Orujo">Orujo</option>
+            <option value="Mosto">Mosto</option>
+            <option value="Cognac">Cognac</option>
+            <option value="Scotch">Scotch</option>
+          </select>
+          <input type="submit" class="form-control" />
+        </form>
+      </div>
+    </main>
+
+    <footer><% include ../partials/footer %></footer>
+  </body>
+</html>
