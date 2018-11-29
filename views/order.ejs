@@ -1,6 +1,8 @@
 <!-- views/pages/about.ejs -->
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,19 +17,37 @@
           <div class="jumbotron">
             <h2>Thanks for your order!</h2>
 
-            <p>
-              do you want to buy other drink?
-            </p>
-            <button class="small">go back to Shop &#10097;</button>
+            <p>do you want to buy other drink?</p>
+            <a class="small" href="/">go back to Shop &#10097;</a>
           </div>
         </div>
 
         <div class="col-sm-4">
-          <div class="well"><h3><%= chooseDrink %></h3></div>
+          <div class="well">
+            <h3>Order</h3>
+            <ul class="list">
+               
+              <% for(let i in chooseDrink){ %>
+              <li>
+                <form action="/drink-order/" method="POST"> 
+                
+                <input name="drink" type="text" value='<%= chooseDrink[i].name %>'>
+                <input name="submit" type="submit" class="delete" value="&#128940"/>
+
+              </form>
+            </li>
+              <% } %>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
 
     <footer><% include ../partials/footer %></footer>
+
   </body>
 </html>
+                
+                
+               
+                  
