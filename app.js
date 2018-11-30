@@ -55,10 +55,10 @@ function chooseDrink(name) {
 function deleteDrink(name) {
   let result = [];
 
-  drinksDB.forEach(drink => {
+  store.getState().forEach(drink => {
     if (name === drink.name) {
-      drinksDB.splice(drinksDB.indexOf(drink), 1);
-      result = drinksDB;
+      store.getState().splice(store.getState().indexOf(drink), 1);
+      result = store.getState();
     }
   });
 
